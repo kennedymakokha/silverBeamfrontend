@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+  }
+  
+  .App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header {
+    height: 100px;
+    background-color: #202020;
+    color: white;
+  }
+  
+  .nav {
+    height: 150px;
+    background-color: transparent;
+    width: 100%;
+  }
+  
+  .sticky {
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    top: 0;
+  }
+  
+  .content {
+    /* background-color: red; */
+  }
+  
