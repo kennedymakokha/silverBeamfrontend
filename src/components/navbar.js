@@ -7,7 +7,7 @@ export default function NavBar({ sticky }) {
 
     return (
         <nav
-            className={classNames("bg-black opacity-70 md:w-[70%] md:h-[150px]  h-10  w-full ", { sticky })}
+            className={classNames("bg-transparent md:w-[70%] md:h-[150px]  h-10  w-full ", { sticky })}
         >
             <div className="justify-between px-4 lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
@@ -64,20 +64,20 @@ export default function NavBar({ sticky }) {
                             }`}
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                            <li className="text-white hover:text-indigo-200">
+                            <li className="text-black hover:text-primary">
                                 <Link to="/">Home</Link>
                             </li>
 
-                            <li className="text-white hover:text-indigo-200">
+                            <li className="text-black hover:text-primary">
                                 <Link to="/about">About US</Link>
                             </li>
-                            <li className="text-white hover:text-indigo-200">
+                            <li className="text-black hover:text-primary">
                                 <Link to="/about">Services</Link>
                             </li>
-                            <li className="text-white hover:text-indigo-200">
+                            <li className="text-black hover:text-primary">
                                 <Link to="/about">News</Link>
                             </li>
-                            <li className="text-white hover:text-indigo-200">
+                            <li className="text-black hover:text-primary">
                                 <Link to="/contact-us">Contact</Link>
                             </li>
                         </ul>

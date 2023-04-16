@@ -7,28 +7,29 @@ body {
     text-align: center;
   }
   
-  .flex {
+  /* .flex {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+  } */
   
   .header {
-    height: 100px;
-    background-color: #202020;
-    color: white;
+    height: 50px;
+    background-color: white;
+    color: black;
   }
   
-  .nav {
+  /* .nav {
     height: 150px;
     background-color: transparent;
     width: 100%;
-  }
+  } */
   
   .sticky {
     position: fixed;
-    background-color: black;
+    background-color: "transparent";
     width: 100%;
+    /* opacity:1; */
     top: 0;
   }
   
