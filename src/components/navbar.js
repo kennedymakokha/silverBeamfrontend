@@ -7,13 +7,13 @@ export default function NavBar({ sticky }) {
 
     return (
         <nav
-            className={classNames("bg-transparent md:w-[70%] md:h-[150px]  h-10  w-full ", { sticky })}
+            className={classNames("bg-green-700 opacity-80 md:w-[70%] md:h-[100px]  h-30 items-center  flex  w-full ", { sticky })}
         >
             <div className="justify-between px-4 lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
-                    <div className="flex items-center justify-between py-0 md:py-5 md:block">
+                    <div className="flex items-center justify-between py-0  md:block">
                         <Link to="/">
-                            <img src="/images/logo-clear.png" alt="" className="object-cover md:h-32 h-10  hidden md:block w-10 md:w-60" />
+                            <img src="/images/Silverbeam-logo-Final-landscape-white.png" alt="" className=" object-contain md:h-[70px] h-10  hidden md:block w-10 md:w-[260px]" />
                             <img src="/images/logo-clear.png" alt="" className="object-cover  md:hidden block  h-10  w-10" />
 
                         </Link>
@@ -60,24 +60,24 @@ export default function NavBar({ sticky }) {
                 </div>
                 <div>
                     <div
-                        className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
+                        className={`flex-1 justify-self-center pb-3 mt-0 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
                             }`}
                     >
-                        <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                            <li className="text-black hover:text-primary">
+                        <ul className="items-center justify-center space-y-0 md:flex md:space-x-6 md:space-y-0">
+                            <li className="text-white text-xl hover:text-primary">
                                 <Link to="/">Home</Link>
                             </li>
 
-                            <li className="text-black hover:text-primary">
+                            <li className="text-white text-xl hover:text-primary">
                                 <Link to="/about">About US</Link>
                             </li>
-                            <li className="text-black hover:text-primary">
-                                <Link to="/about">Services</Link>
+                            <li className="text-white text-xl hover:text-primary">
+                                <Link to="/services">Services</Link>
                             </li>
-                            <li className="text-black hover:text-primary">
+                            <li className="text-white text-xl hover:text-primary">
                                 <Link to="/about">News</Link>
                             </li>
-                            <li className="text-black hover:text-primary">
+                            <li className="text-white text-xl hover:text-primary">
                                 <Link to="/contact-us">Contact</Link>
                             </li>
                         </ul>

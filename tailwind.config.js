@@ -17,7 +17,7 @@ module.exports = {
         primary_red: "#CE3234",
         btn_text: "#FEFFFE",
         deactivate_bg: "#F800001A",
-        primary: "#D4AF37",
+        primary: "#FEAF39",
         gray_bg: "#F5F5F5",
         border_color: "#878787",
         primary_red_bg: "#F800001A",

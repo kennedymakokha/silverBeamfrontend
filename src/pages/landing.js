@@ -75,10 +75,15 @@ function Landing() {
                         <h2 className="text-3xl uppercase text-center font-bold text-primary ">What we offer</h2>
                         <h4 className=" uppercase text-center font-thin  text-slate-500 ">TAILORED Contruction SERVICES</h4>
                         <div className="w-full h-full flex px-10 md:px-[250px] flex-wrap pt-10 bg-slate-100">
-                            <WhyUscontainer />
-                            <WhyUscontainer />
-                            <WhyUscontainer />
-                            <WhyUscontainer />
+                            <WhyUscontainer title="CONTRACT LOGISTICS" description="s simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummyum" />
+                            <WhyUscontainer title="CONTRACT LOGISTICS" description="s simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummyum" />
+                            <WhyUscontainer title="CONTRACT LOGISTICS" description="s simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummyum" />
+                            <WhyUscontainer title="CONTRACT LOGISTICS" description="s simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummyum" />
+
                         </div>
                     </div>
 

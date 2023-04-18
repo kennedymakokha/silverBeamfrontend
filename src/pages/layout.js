@@ -4,7 +4,7 @@ import "./styles.css";
 
 
 import { useState } from "react";
-import NavBar from "../components/navbar";
+import NavBar from "../components/Nav";
 import { FooterCardcontainer, QuicklinkItem, TitleOver } from "./landingComponents";
 
 export default function StickyNav(props) {
@@ -12,11 +12,11 @@ export default function StickyNav(props) {
     const [currentSlide, setcurrentSlide] = useState(0)
     const [paused, setPaused] = useState(false)
     return (
-        <div className="App  ">
+        <div className="App   ">
             <header className="header hidden   ">
                 <p></p>
             </header>
-            <nav ref={stickyRef} className={classNames("h-[150px] bg-white w-full flex items-center justify-center relative z-20 ", { sticky })}>
+            <nav ref={stickyRef} className={classNames("h-[70px] bg-slate-200 w-full flex items-center justify-center relative z-20 ", { sticky })}>
                 <NavBar sticky={sticky} />
             </nav>
             {sticky && (

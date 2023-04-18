@@ -54,9 +54,11 @@ export const TitleUnder = (props) => {
 }
 export const TitleOver = (props) => {
     return (
-        <div className=" flex  flex-col" >
-            <div className="h-1 w-10 bg-primary mb-2" style={{ alignSelf: 'start' }}></div>
-            <h1 className="text-2xl font-bold text-primary" style={{ fontSize: props.fontsize && props.fontsize, color: props.color && props.color }}>{props.title}</h1>
+        <div className='w-full flex pb-10' style={{ alignSelf: 'start' }}>
+            <div className=" flex  flex-col" >
+                <div className="h-1 w-10 bg-primary mb-2" style={{ alignSelf: 'start' }}></div>
+                <h1 className="text-2xl font-bold text-primary" style={{ fontSize: props.fontsize && props.fontsize, color: props.color && props.color }}>{props.title}</h1>
+            </div>
         </div>
 
     )
@@ -70,10 +72,9 @@ export const WhyUscontainer = (props) => {
                 </svg>
             </div>
             <div className="w-2/3 h-full  items-left ">
-                <h6 className=" uppercase  font-bold   ">Contract logistics</h6>
+                <h6 className=" uppercase  font-bold   ">{props.title}</h6>
                 <p className="text-justify p-5 ">
-                    s simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummyum
+                    {props.description}
                 </p>
             </div>
         </div>
