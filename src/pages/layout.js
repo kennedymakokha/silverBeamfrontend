@@ -3,20 +3,19 @@ import useSticky from "../components/junk/useSticky";
 import "./styles.css";
 
 
-import { useState } from "react";
-import NavBar from "../components/Nav";
+
+import NavBar from "../components/navbar";
 import { FooterCardcontainer, QuicklinkItem, TitleOver } from "./landingComponents";
 
 export default function StickyNav(props) {
     const { sticky, stickyRef } = useSticky();
-    const [currentSlide, setcurrentSlide] = useState(0)
-    const [paused, setPaused] = useState(false)
+
     return (
         <div className="App   ">
             <header className="header hidden   ">
                 <p></p>
             </header>
-            <nav ref={stickyRef} className={classNames("h-[70px] bg-slate-200 w-full flex items-center justify-center relative z-20 ", { sticky })}>
+            <nav ref={stickyRef} className={classNames("h-[0px] top-20  bg-transparent w-full flex items-center justify-center relative z-20 ", { sticky })}>
                 <NavBar sticky={sticky} />
             </nav>
             {sticky && (
@@ -29,7 +28,8 @@ export default function StickyNav(props) {
             <main className="content bg-gradient-to-b from-black to-slate-600  h-full overflow-x-hidden   ">
                 {props.children}
             </main >
-            <div className="h-full w-full  bg-gradient-to-b from-black to-slate-600  h-full overflow-x-hidden flex px-10 md:px-[250px]" >
+            {/* <div className="h-full w-full  bg-gradient-to-b from-black to-slate-600  h-full overflow-x-hidden flex px-10 md:px-[250px]" > */}
+            <div className="h-full w-full  bg-gradient-to-b from-black to-slate-600 flex-wrap flex overflow-hidden py-10 md:px-[240px]" >
                 <FooterCardcontainer title="NEWSLETTER SUBSCRIBE" body={
                     <div className="flex w-full flex-col ">
                         <p className="text-white text-justify">Subscribe to our newsletter and we will inform you about newest projects and promotions.</p>
@@ -44,7 +44,7 @@ export default function StickyNav(props) {
                         </div>
                     </div>} />
                 <FooterCardcontainer title="QUICK LINKS" body={
-                    <div className="flex flex-col gap-y-2 ">
+                    <div className="flex flex-col gap-y-2 items-left justify-left ">
                         <QuicklinkItem title="about us" link="/about" />
                         <QuicklinkItem title="contact us" link="/contact-us" />
                         <QuicklinkItem title="services" link="/services" />

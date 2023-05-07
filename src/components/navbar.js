@@ -1,22 +1,82 @@
 import classNames from "classnames";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import MyDropdown from "./junk/dropdown";
 
 export default function NavBar({ sticky }) {
+    // const NavItems = [
+    //     { title: "home", path: "/" },
+    //     { title: "About US", path: "/" },
+    //     { title: "Services", path: "/" },
+    //     { title: "News", path: "/" },
+    //     { title: "Contact", path: "/" },
+
+    // ]
     const [navbar, setNavbar] = useState(false);
 
+    const [currentMenuIndex, setCurrentMenuIndex] = useState(null);
+
+    const [NavItems, setNavItems] = useState(
+        [
+            {
+                title: "home", path: "/", children: [
+                ]
+            },
+            {
+                title: "About US", path: "", children: [
+                    { title: "about us", path: "/about", state: 'false' },
+                    { title: "our team", path: "/", state: 'false' },
+                    // { title: "home", path: "/", state: 'false' },
+                ]
+            },
+            {
+                title: "Services", path: "", children: [
+                    { title: "what we do ", path: "/services", state: 'false' },
+                    // { title: "home", path: "/", state: 'false' },
+                    // { title: "home", path: "/", state: 'false' }
+                ]
+            },
+            {
+                title: "News", path: "", children: [
+                    { title: "dailies", path: "/", state: 'false' },
+                    // { title: "home", path: "/", state: 'false' },
+                    // { title: "home", path: "/", state: 'false' },
+                ]
+            },
+            {
+                title: "Contact", path: "", children: [
+                    { title: "contact us", path: "/contact-us", state: 'false' },
+                    // { title: "home", path: "/", state: 'false' },
+                    // { title: "home", path: "/", state: 'false' },
+                ]
+            },
+
+        ]
+    );
+
+
+    const NavItem = (props) => {
+
+        const { data: { title, path, children, }, index } = props
+        return (
+            <div className="flex flex-col ">
+                <MyDropdown title={title} path={path} children={children} index={index} currentMenuIndex={currentMenuIndex} setCurrentMenuIndex={setCurrentMenuIndex} />
+            </div>
+
+        )
+    }
+
     return (
+
         <nav
-            className={classNames("bg-green-700 opacity-80 md:w-[70%] md:h-[100px]  h-30 items-center  flex  w-full ", { sticky })}
+            className={classNames("bg-black opacity-80 md:w-[70%] md:h-[70px]  h-10 items-center  flex-col flex  w-full ", { sticky })}
         >
             <div className="justify-between px-4 lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
-                    <div className="flex items-center justify-between py-0  md:block">
-                        <Link to="/">
-                            <img src="/images/Silverbeam-logo-Final-landscape-white.png" alt="" className=" object-contain md:h-[70px] h-10  hidden md:block w-10 md:w-[260px]" />
-                            <img src="/images/logo-clear.png" alt="" className="object-cover  md:hidden block  h-10  w-10" />
+                    <div className="flex  justify-between py-0  md:block">
 
-                        </Link>
+                        <div className="flex items-center flex-shrink-0 text-white mr-6 lg:mr-72">
+                            <img src='/images/Silverbeam-logo-Final-landscape-white.png' className="md:w-[200px] w-[100px] md:h-14 h-7 mr-2" alt="Logo" />
+                        </div>
                         <div
 
                             className={classNames("md:hidden", { sticky })}
@@ -63,56 +123,17 @@ export default function NavBar({ sticky }) {
                         className={`flex-1 justify-self-center pb-3 mt-0 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
                             }`}
                     >
-                        <ul className="items-center justify-center space-y-0 md:flex md:space-x-6 md:space-y-0">
-                            <li className="text-white text-xl hover:text-primary">
-                                <Link to="/">Home</Link>
-                            </li>
-
-                            <li className="text-white text-xl hover:text-primary">
-                                <Link to="/about">About US</Link>
-                            </li>
-                            <li className="text-white text-xl hover:text-primary">
-                                <Link to="/services">Services</Link>
-                            </li>
-                            <li className="text-white text-xl hover:text-primary">
-                                <Link to="/about">News</Link>
-                            </li>
-                            <li className="text-white text-xl hover:text-primary">
-                                <Link to="/contact-us">Contact</Link>
-                            </li>
-                        </ul>
-
-                        {/* <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-                            <a
-                                href="javascript:void(0)"
-                                className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-                            >
-                                Sign in
-                            </a>
-                            <a
-                                href="javascript:void(0)"
-                                className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
-                            >
-                                Sign up
-                            </a>
-                        </div> */}
+                        <div className="items-center justify-center space-y-0 md:flex md:space-x-6 md:space-y-0">
+                            {NavItems.map((nav, i) => (
+                                <NavItem data={nav} key={i} index={i} />
+                            ))}
+                        </div>
                     </div>
+
                 </div>
-                {/* <div className="hidden space-x-2 md:inline-block">
-                    <a
-                        href="javascript:void(0)"
-                        className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-                    >
-                        Sign in
-                    </a>
-                    <a
-                        href="javascript:void(0)"
-                        className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
-                    >
-                        Sign up
-                    </a>
-                </div> */}
+
             </div>
+
 
         </nav >
     );

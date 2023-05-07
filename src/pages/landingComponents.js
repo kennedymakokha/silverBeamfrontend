@@ -5,16 +5,16 @@ export const Categorycard = (props) => {
         <div class="md:w-1/3 w-full  h-full hover:bg-slate-400 bg-slate-200 flex flex-col border border-white border-2 pb-5 ">
             <div class="w-full h-1/2 relative  ">
                 <img src={props.img} className='h-full w-full object-fit ' alt="" />
-                {/* <div class="absolute inset-0 flex justify-center items-center z-10 ">
-                    <p class="font-bold text-white text-2xl text-center cursor  hover:text-blue-300">{props.title}</p>
-                </div> */}
-                <TitleOver title={props.title} />
+
+
             </div>
-            <div className='flex text-justify justify-center items-center h-1/2  m-2 overflow-hidden'>
+            <div className='flex flex-col h-full w-full  m-2 ' >
+                <div style={{ alignSelf: 'start' }}></div>
+                <TitleOver title={props.title} />
+                <div className='flex text-justify justify-center items-center h-full m-2 overflow-hidden'>
+                    {props.description.substring(1, 100) + "..."}
 
-                {props.description.substring(1, 100) + "..."}
-
-
+                </div>
             </div>
         </div>
     )
@@ -60,18 +60,17 @@ export const TitleOver = (props) => {
                 <h1 className="text-2xl font-bold text-primary" style={{ fontSize: props.fontsize && props.fontsize, color: props.color && props.color }}>{props.title}</h1>
             </div>
         </div>
-
     )
 }
 export const WhyUscontainer = (props) => {
     return (
-        <div className="md:w-1/2 w-full h-[150px] p-2 flex">
-            <div className="w-1/4 h-full flex justify-center items-center border-r border-r-dotted border-primary" >
+        <div className="md:w-1/3   md:h-[200px] h-[230px] md:p-2 p-2 mt-2 flex">
+            <div className="md:w-1/4 h-full flex justify-center items-center border-r border-r-dotted border-primary" >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-primary">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
                 </svg>
             </div>
-            <div className="w-2/3 h-full  items-left ">
+            <div className="md:w-2/3 w-full h-full  items-left ">
                 <h6 className=" uppercase  font-bold   ">{props.title}</h6>
                 <p className="text-justify p-5 ">
                     {props.description}
@@ -101,7 +100,7 @@ export const Newscontainer = (props) => {
 
 export const FooterCardcontainer = (props) => {
     return (
-        <div className='flex flex-col w-1/4 pt-20 px-5 '>
+        <div className='flex flex-col md:w-1/4 w-full pt-20 px-5 '>
             <div className='w-full flex' style={{ alignSelf: 'start' }}>
                 <TitleOver fontsize="15px" color="white" title={props.title} />
             </div>
@@ -130,7 +129,7 @@ export const Morecontainer = (props) => {
 
 export const QuicklinkItem = (props) => {
     return (
-        <Link to={props.link} className="flex items-center group">
+        <Link to={props.link} className="flex items-start group">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4  group-hover:text-white text-primary">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>

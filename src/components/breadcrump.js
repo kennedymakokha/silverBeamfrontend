@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Breadcrump(props) {
     return (
-        <div className='flex px-10 md:px-[250px] h-30 flex-col w-full items-center justify-center gap-y-1'>
+        <div className='flex px-10 md:px-[250px] h-10 flex-col w-full items-center justify-center gap-y-1'>
             <h2 className='text-2xl text-gray-300 font-bold '>{props.title}</h2>
             <div className='flex justify-center items-center'>
                 <Link to="/" className='text-white' >Home</Link>

@@ -5,6 +5,7 @@ import About from './pages/about';
 import NotFound from './pages/notFound';
 import Contact from './pages/contact';
 import Service from './pages/service';
+import Carousel from './components/junk/couasel';
 // import Home from './pages/landing';
 // import Home from './components/junk/sticky';
 
@@ -15,6 +16,7 @@ function App() {
         <Route exact path='/' element={<Home />} />
         <Route exact path='/about' element={<About />} />
         <Route exact path='/services' element={<Service />} />
+        <Route exact path='/test' element={<Carousel />} />
         <Route path="*" element={<NotFound />} />
         <Route exact path='/contact-us' element={<Contact />} />
 

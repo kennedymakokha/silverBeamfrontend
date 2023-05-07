@@ -1,17 +1,17 @@
 body {
     margin: 0;
+    
   }
   
   .App {
-    font-family: sans-serif;
-    text-align: center;
+    font-family: 'Raleway', sans-serif;
   }
   
-  /* .flex {
+  .flex {
     display: flex;
     align-items: center;
     justify-content: center;
-  } */
+  }
   
   .header {
     height: 50px;
@@ -37,3 +37,4 @@ body {
     /* background-color: red; */
   }
   
+ 
